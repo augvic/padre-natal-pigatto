@@ -1,44 +1,175 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/style_login.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Escolar</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Estilo Customizado -->
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(to bottom, #e6f0ff, #fdfdff);
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .login-container {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.75);
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      animation: fadeInDown 1s ease both;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .login-box h2 {
+      color: #1e3a8a;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    label {
+      color: #333;
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid #ccc;
+      color: #333;
+      border-radius: 12px;
+      padding: 10px 14px;
+    }
+
+    .form-control:focus {
+      background: #fff;
+      box-shadow: 0 0 0 2px #80bfff;
+      color: #000;
+    }
+
+    ::placeholder {
+      color: #999;
+    }
+
+    .btn-login {
+      background: #1e3a8a;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      transition: 0.3s ease;
+    }
+
+    .btn-login:hover {
+      background: #254edb;
+    }
+
+    .forgot-password {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #3b3b3b;
+      text-align: right;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+
+    .forgot-password:hover {
+      color: #1e3a8a;
+      text-decoration: underline;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="login-window">
-        <form class="login-form">
-            <h1>Login</h1>
-            <div class="input-box">
-                <input id="email" type="text" placeholder="Usuário" required>
-            </div>
-            <div class="input-box">
-                <input id="password" type="password" placeholder="Senha" required>
-            </div>
-            <div class="remember-checkbox">
-                <label><input type="checkbox">Lembrar de mim?</label>
-            </div>
-            <button id="login-btn" type="submit" class="button">Entrar</button>
-            <div class="forgot-link">
-                <a href="#">Esqueceu a senha?</a>
-            </div>
-            <div class="register-link">
-                <a href="#">Registre-se</a>
-            </div>
-        </form>
-    </div>
+
+<!-- Fundo animado -->
+<div id="particles-js"></div>
+
+<!-- Formulário de login -->
+<div class="login-container">
+  <div class="login-box animate__animated animate__fadeInUp">
+    <h2>Login</h2>
+    <form>
+      <div class="mb-3">
+        <label for="email">Login</label>
+        <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required />
+      </div>
+      <div class="mb-2">
+        <label for="senha">Senha</label>
+        <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required />
+      </div>
+      <a href="#" class="forgot-password">Esqueci a senha</a>
+      <div class="mt-4">
+        <button type="submit" class="btn btn-login w-100">Entrar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<!-- Particles.js config -->
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": "#1e3a8a" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.4 },
+    "size": { "value": 3, "random": true },
+    "line_linked": {
+      "enable": true,
+      "distance": 130,
+      "color": "#1e3a8a",
+      "opacity": 0.3,
+      "width": 1
+    },
+    "move": { "enable": true, "speed": 2 }
+  },
+  "interactivity": {
+    "events": {
+      "onhover": { "enable": true, "mode": "grab" },
+      "onclick": { "enable": true, "mode": "push" }
+    },
+    "modes": {
+      "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } },
+      "push": { "particles_nb": 4 }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+
 </body>
-
-
-<script type="module" src="../../scripts/admin/login.js"></script>
-
-<footer>
-    <p>2025 - Padre Piggato</p>
-</footer>
-
 </html>
