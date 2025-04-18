@@ -1,115 +1,120 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Criar Postagem</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Postagem</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/public/css/animation.css">
+
+  <style>
+    .preview-img {
+      max-width: 150px;
+      max-height: 150px;
+      object-fit: cover;
+      margin: 5px;
+      border-radius: 8px;
+      box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
-<body class="bg-body-secondary p-4">
-
-
-
-
+<body class="bg-light p-4">
+  <div class="container">
+    <h2 class="mb-4">Criar Postagem</h2>
 
     <form>
+      <!-- Título -->
+      <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input type="text" class="form-control" id="titulo" placeholder="Digite o título..." />
+      </div>
 
-          
+      <!-- Descrição -->
+      <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <textarea class="form-control" id="descricao" rows="4" placeholder="Escreva algo..."></textarea>
+      </div>
 
-        <div class="container">
-            <div class="card shadow-lg">
-              <div class="card-header bg-primary text-white">
-                <h5 class="mb-0">📸 Carregue suas imagens</h5>
-              </div>
-              <div class="card-body">
-                <input type="file" id="imageInput" multiple accept="image/*" class="form-control mb-3">
-        
-                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner" id="carouselImages">
-                    <!-- Imagens aparecerão aqui -->
-                    <div class="carousel-item active">
-                      <div class="d-flex justify-content-center align-items-center" style="height: 300px; color: #999;">
-                        Nenhuma imagem selecionada.
-                      </div>
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+      <!-- Tipo de Postagem -->
+      <div class="mb-3">
+        <label class="form-label">Tipo de Postagem com Imagem</label>
+        <select class="form-select" id="tipoPostagem" onchange="atualizarInputs()">
+          <option value="">Selecione um tipo</option>
+          <option value="unica">Imagem Única</option>
+          <option value="carrossel">Carrossel (até 3 imagens)</option>
+          <option value="album">Álbum de Fotos</option>
+        </select>
+      </div>
 
+      <!-- Imagem Única -->
+      <div class="mb-3 d-none" id="grupoUnica">
+        <label for="imagemUnica" class="form-label">Escolha a imagem</label>
+        <input class="form-control" type="file" id="imagemUnica" accept="image/*" onchange="previewImagem(this, 'previewUnica')" />
+        <div id="previewUnica" class="d-flex flex-wrap mt-2"></div>
+      </div>
 
+      <!-- Carrossel -->
+      <div class="mb-3 d-none" id="grupoCarrossel">
+        <label for="imagensCarrossel" class="form-label">Escolha até 3 imagens</label>
+        <input class="form-control" type="file" id="imagensCarrossel" accept="image/*" multiple onchange="previewImagem(this, 'previewCarrossel')" />
+        <div id="previewCarrossel" class="d-flex flex-wrap mt-2"></div>
+      </div>
 
+      <!-- Álbum -->
+      <div class="mb-3 d-none" id="grupoAlbum">
+        <label for="imagensAlbum" class="form-label">Selecione as imagens do álbum</label>
+        <input class="form-control" type="file" id="imagensAlbum" accept="image/*" multiple onchange="previewImagem(this, 'previewAlbum')" />
+        <div id="previewAlbum" class="d-flex flex-wrap mt-2"></div>
+      </div>
 
-
-        <div class="container">
-            <label for="mensagem" class="form-label">Digite sua mensagem:</label>
-            <textarea class="form-control" id="mensagem" rows="5" placeholder="Escreva aqui..."></textarea>
-          </div>
-
-
-
-
+      <!-- Botão -->
+      <button type="submit" class="btn btn-success">Postar</button>
     </form>
+  </div>
 
-    <script>
-        const input1 = document.getElementById("titulo_postagem");
-        const nextCollapse = new bootstrap.Collapse('#panelsStayOpen-collapseTwo', { toggle: false });
-      
-        input1.addEventListener("keydown", function (e) {
-          if (e.key === "Enter") {
-            e.preventDefault(); // Evita o envio de formulário
-            nextCollapse.show();
-            document.getElementById("etapa2_input").focus(); // Foca no próximo input
-          }
+  <script>
+    function atualizarInputs() {
+      const tipo = document.getElementById("tipoPostagem").value;
+
+      // esconde todos os grupos
+      document.getElementById("grupoUnica").classList.add("d-none");
+      document.getElementById("grupoCarrossel").classList.add("d-none");
+      document.getElementById("grupoAlbum").classList.add("d-none");
+
+      // limpa os previews
+      document.getElementById("previewUnica").innerHTML = '';
+      document.getElementById("previewCarrossel").innerHTML = '';
+      document.getElementById("previewAlbum").innerHTML = '';
+
+      // mostra o grupo selecionado
+      if (tipo === "unica") {
+        document.getElementById("grupoUnica").classList.remove("d-none");
+      } else if (tipo === "carrossel") {
+        document.getElementById("grupoCarrossel").classList.remove("d-none");
+      } else if (tipo === "album") {
+        document.getElementById("grupoAlbum").classList.remove("d-none");
+      }
+    }
+
+    function previewImagem(input, targetId) {
+      const container = document.getElementById(targetId);
+      container.innerHTML = ''; // limpa antes
+
+      if (input.files) {
+        [...input.files].forEach(file => {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.classList.add("preview-img");
+            container.appendChild(img);
+          };
+          reader.readAsDataURL(file);
         });
-      </script>
+      }
+    }
+  </script>
 
-    <script>
-        const input = document.getElementById('imageInput');
-        const carouselInner = document.getElementById('carouselImages');
-    
-        input.addEventListener('change', function () {
-          const files = Array.from(input.files);
-          carouselInner.innerHTML = '';
-    
-          if (files.length === 0) {
-            carouselInner.innerHTML = `
-              <div class="carousel-item active">
-                <div class="d-flex justify-content-center align-items-center" style="height: 300px; color: #999;">
-                  Nenhuma imagem selecionada.
-                </div>
-              </div>`;
-            return;
-          }
-    
-          files.forEach((file, index) => {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-              const div = document.createElement('div');
-              div.classList.add('carousel-item');
-              if (index === 0) div.classList.add('active');
-              div.innerHTML = `<img src="${e.target.result}" class="d-block w-100" alt="Imagem ${index + 1}">`;
-              carouselInner.appendChild(div);
-            };
-            reader.readAsDataURL(file);
-          });
-        });
-      </script>
-    
-
-
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
