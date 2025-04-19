@@ -122,7 +122,7 @@ class PageController {
             const data = doc.data();
             const imagensHTML = (data.imagens || []).map(imagem => `
                 <div class="swiper-slide">
-                    <img src="${imagem}" class="w-full h-64 object-cover border-4 border-[rgb(225,55,90)] shadow" />
+                    <img src="${imagem}" class="w-full h-64 object-cover border-4 border-[rgb(255,155,175)] shadow" />
                 </div>
             `).join('');
             const comunicadoHTML = `
@@ -135,6 +135,7 @@ class PageController {
                             <div class="swiper-pagination mt-2"></div>
                         </div>
                         <h3 class="font-semibold text-xl">${data.titulo}</h3>
+                        <p class="text-base text-gray-600 mt-2">${data.data}</p>
                         <p class="text-base text-gray-600 mt-2">${data.descricao}</p>
                     </div>
                 </div>
@@ -169,7 +170,7 @@ class PageController {
             const data = doc.data();
             const imagensHTML = (data.imagens || []).map(imagem => `
                 <div class="swiper-slide">
-                    <img src="${imagem}" class="w-full h-64 object-cover border-4 border-[rgb(225,55,90)] shadow" />
+                    <img src="${imagem}" class="w-full h-64 object-cover border-4 border-[rgb(255,155,175)] shadow" />
                 </div>
             `).join('');
             const comunicadoHTML = `
@@ -182,6 +183,7 @@ class PageController {
                             <div class="swiper-pagination mt-2"></div>
                         </div>
                         <h3 class="font-semibold text-xl">${data.titulo}</h3>
+                        <p class="text-base text-gray-600 mt-2">${data.data}</p>
                         <p class="text-base text-gray-600 mt-2">${data.descricao}</p>
                     </div>
                 </div>

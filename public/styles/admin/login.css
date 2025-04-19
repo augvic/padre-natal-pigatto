@@ -1,10 +1,16 @@
-
 html, body {
+    --primary: rgb(225, 55, 90);
+    --secondary: rgb(255, 155, 175);
     height: 100%;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: linear-gradient(to bottom, #e6f0ff, #fdfdff);
     overflow: hidden;
+}
+
+html::selection {
+    background-color: var(--primary);
+    color: rgb(255, 255, 255);
 }
 
 #particles-js {
@@ -36,7 +42,7 @@ html, body {
 }
 
 .login-box h2 {
-    color: #1e3a8a;
+    color: var(--primary);
     text-align: center;
     margin-bottom: 30px;
     font-weight: 600;
@@ -59,7 +65,7 @@ label {
 
 .form-control:focus {
     background: #fff;
-    box-shadow: 0 0 0 2px #80bfff;
+    box-shadow: 0 0 0 2px #ff9baf;
     color: #000;
 }   
 
@@ -68,7 +74,7 @@ label {
 }
 
 .btn-login {
-    background: #1e3a8a;
+    background: var(--primary);
     color: #fff;
     border: none;
     border-radius: 12px;
@@ -76,7 +82,7 @@ label {
 }
 
 .btn-login:hover {
-    background: #254edb;
+    background: var(--secondary);
 }
 
 .forgot-password {
@@ -90,6 +96,6 @@ label {
 }
 
 .forgot-password:hover {
-    color: #1e3a8a;
+    color: var(--primary);
     text-decoration: underline;
 }

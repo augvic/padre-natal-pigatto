@@ -13,12 +13,19 @@
 
   <style>
     html, body {
+      --primary: rgb(225, 55, 90);
+      --secondary: rgb(255, 155, 175);
       height: 100%;
       margin: 0;
       background: linear-gradient(to bottom, #e6f0ff, #fdfdff);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       overflow-x: hidden;
     }
+
+    html::selection {
+    background-color: var(--primary);
+    color: rgb(255, 255, 255);
+  }
 
     #particles-js {
       position: fixed;
@@ -39,9 +46,17 @@
       margin-top: 40px;
     }
 
+    .inputs:focus {
+      box-shadow: 0 0 0 2px #ff9baf;
+    }
+
+    .container h2 {
+      color: var(--primary);
+    }
+
     label {
       font-weight: 500;
-      color: #1e3a8a;
+      color: var(--primary);
     }
 
     .form-control, .form-select {
@@ -52,16 +67,16 @@
 
     .form-control:focus, .form-select:focus {
       background: #fff;
-      box-shadow: 0 0 0 2px #80bfff;
+      box-shadow: 0 0 0 2px --secondary;
     }
 
     .btn-success {
-      background-color: #1e3a8a !important;
+      background-color: var(--primary) !important;
       border: none;
     }
 
     .btn-success:hover {
-      background-color: #254edb !important;
+      background-color: var(--primary) !important;
     }
 
     .preview-img {
@@ -80,25 +95,25 @@
   <div id="particles-js"></div>
 
   <div class="container">
-    <h2 class="mb-4 text-primary animate__animated animate__fadeInDown">Criar Postagem</h2>
+    <h2 class="mb-4 animate__animated animate__fadeInDown">Criar Postagem</h2>
 
     <form>
       <!-- Título -->
       <div class="mb-3 animate__animated animate__fadeInUp animate__delay-1s">
         <label for="titulo" class="form-label">Título</label>
-        <input type="text" class="form-control" id="titulo" placeholder="Digite o título..." />
+        <input type="text" class="inputs form-control" id="titulo" placeholder="Digite o título..." />
       </div>
 
       <!-- Descrição -->
       <div class="mb-3 animate__animated animate__fadeInUp animate__delay-2s">
         <label for="descricao" class="form-label">Descrição</label>
-        <textarea class="form-control" id="descricao" rows="4" placeholder="Escreva algo..."></textarea>
+        <textarea class="inputs form-control" id="descricao" rows="4" placeholder="Escreva algo..."></textarea>
       </div>
 
       <!-- Tipo de Postagem -->
       <div class="mb-3 animate__animated animate__fadeInUp animate__delay-3s">
         <label class="form-label">Tipo de Postagem com Imagem</label>
-        <select class="form-select" id="tipoPostagem" onchange="atualizarInputs()">
+        <select class="inputs form-select" id="tipoPostagem" onchange="atualizarInputs()">
           <option value="">Selecione um tipo</option>
           <option value="unica">Imagem Única</option>
           <option value="carrossel">Carrossel (até 3 imagens)</option>
@@ -109,21 +124,21 @@
       <!-- Imagem Única -->
       <div class="mb-3 d-none" id="grupoUnica">
         <label for="imagemUnica" class="form-label">Escolha a imagem</label>
-        <input class="form-control" type="file" id="imagemUnica" accept="image/*" onchange="previewImagem(this, 'previewUnica')" />
+        <input class="inputs form-control" type="file" id="imagemUnica" accept="image/*" onchange="previewImagem(this, 'previewUnica')" />
         <div id="previewUnica" class="d-flex flex-wrap mt-2"></div>
       </div>
 
       <!-- Carrossel -->
       <div class="mb-3 d-none" id="grupoCarrossel">
         <label for="imagensCarrossel" class="form-label">Escolha até 3 imagens</label>
-        <input class="form-control" type="file" id="imagensCarrossel" accept="image/*" multiple onchange="previewImagem(this, 'previewCarrossel')" />
+        <input class="inputs form-control" type="file" id="imagensCarrossel" accept="image/*" multiple onchange="previewImagem(this, 'previewCarrossel')" />
         <div id="previewCarrossel" class="d-flex flex-wrap mt-2"></div>
       </div>
 
       <!-- Álbum -->
       <div class="mb-3 d-none" id="grupoAlbum">
         <label for="imagensAlbum" class="form-label">Selecione as imagens do álbum</label>
-        <input class="form-control" type="file" id="imagensAlbum" accept="image/*" multiple onchange="previewImagem(this, 'previewAlbum')" />
+        <input class="inputs form-control" type="file" id="imagensAlbum" accept="image/*" multiple onchange="previewImagem(this, 'previewAlbum')" />
         <div id="previewAlbum" class="d-flex flex-wrap mt-2"></div>
       </div>
 
@@ -178,18 +193,18 @@
     particlesJS("particles-js", {
       "particles": {
         "number": { "value": 200, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#E1375A" },
+        "color": { "value": "#ff375a" },
         "shape": { "type": "circle" },
-        "opacity": { "value": 0.2 },
+        "opacity": { "value": 0.4 },
         "size": { "value": 3, "random": true },
         "line_linked": {
           "enable": true,
-          "distance": 120,
-          "color": "#E1375A",
-          "opacity": 0.25,
+          "distance": 130,
+          "color": "#ff9baf",
+          "opacity": 0.3,
           "width": 1
         },
-        "move": { "enable": true, "speed": 5 }
+        "move": { "enable": true, "speed": 2 }
       },
       "interactivity": {
         "events": {
@@ -203,7 +218,7 @@
       },
       "retina_detect": true
     });
-  </script>
+    </script>
 
 </body>
 </html>
