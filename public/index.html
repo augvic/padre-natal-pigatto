@@ -1,85 +1,192 @@
+<!-- ================================================== -->
+
+<!-- HTML. -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<!-- Head. -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/carrossel.css">
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Escola Municipal Padre Natal Pigatto</title>
-</head>
+    <!-- ================================================== -->
 
-<!-- Body. -->
-<body>
-  <div class="wrapper">
-    <main>
+    <!-- Header. -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Padre Natal Pigatto</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="styles/index.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    </head>
 
-      <!-- Navbar. -->
-      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-        <div class="container-fluid d-flex justify-content-center">
-          <a class="navbar-brand mx-auto" href="">Inicio</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Comunicados</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#histórica">Historia</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Contato</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Equipe</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Contato</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <!-- ================================================== -->
 
-      <!-- Sessão com paralax. -->
-      <section class="module parallax parallax-1">
-        <h1 class="area-1">Escola Municipal Padre Natal Pigatto</h1>
-      </section>
+    <!-- Body. -->
+    <body class="scroll-smooth">
 
-      <!-- Sessão história. -->
-      <section id="histórica" class="module content">
-        <div class="container area-1">
-          <h1>Historia</h1>
-          <p>
-            Instituição histórica - Fundada em 1895, a Escola Padre Natal Pigatto é a mais antiga escola de Campo Largo e seu nome é em homenagem ao missionário italiano Natal Pigatto, que atuou na região entre 1895 e 1926. Ele é lembrado por sua importante contribuição à comunidade local e também nomeia uma importante avenida do município.
-            Em visita à obra, o prefeito Maurício Rivabem destacou o grande passo para os estudantes da região e comemorou o progresso da obra: “Esse sonho já está saindo do papel e logo estaremos recebendo nossos alunos aqui. As nossas crianças merecem um ambiente acolhedor e inclusivo”.
-            Categorias
-            Educação  
-          </p>
-          <div class="carrossel">
-            <div class="slides">
-              <img src="img/alunos.png" alt="1">
-              <img src="img/Natale Pigatto.png" alt="2">
-              <img src="img/Paróquia.png" alt="3">
-              <img src="img/enterrado.png" alt="4">
-            </div>
-          </div>
-        </div>
-      </section>
+        <!-- ================================================== -->
 
-    <!-- Fecha main. -->
-    </main>
+        <!-- Navbar -->
+        <header class="fixed top-0 w-full bg-white shadow z-50">
+            <nav class="flex flex-wrap justify-around gap-2 sm:gap-4 p-4 text-center">
+                <a href="#inicio" class="nav-bar-links text-xs sm:text-sm">
+                    <strong>Início <span class="sm:inline">📌</span></strong></a>
+                <a href="#comunicados" class="nav-bar-links text-xs sm:text-sm">
+                    <strong>Comunicados <span class="sm:inline">📢</span></strong>
+                </a>
+                <a href="#postagens" class="nav-bar-links text-xs sm:text-sm">
+                    <strong>Postagens <span class="sm:inline">🤳</span></strong>
+                </a>
+                <a href="#equipe" class="nav-bar-links text-xs sm:text-sm">
+                    <strong>Equipe <span class="sm:inline">👥</span></strong>
+                </a>
+                <a href="#contato" class="nav-bar-links text-xs sm:text-sm">
+                    <strong>Contato <span class="sm:inline">📞</span></strong>
+                </a>
+                <a href="#historia" class="nav-bar-links text-xs sm:text-sm">
+                    <strong>História <span class="sm:inline">📖</span></strong>
+                </a>
+            </nav>
+        </header>
 
-  <!-- Fecha wrapper. -->
-  </div>
+        <!-- ================================================== -->
 
-  <!-- Importando script. bury -->
-  <script src="scripts/home.js"></script>
-</body>
+        <!-- Sessões. -->
+        <main class="pt-14">
+
+            <!-- ================================================== -->
+
+            <!-- Início. -->
+            <section id="inicio" class="relative h-screen bg-cover bg-center" style="background-image: url('images/index_inicio.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+                <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+                    <h1 class="titulo-inicio text-white text-2xl md:text-5xl font-bold opacity-0">
+                        Escola Municipal Padre Natal Pigatto
+                    </h1>
+                    <p class="subtitulo-inicio text-white mt-4 text-lg md:text-2xl opacity-0">
+                        Família + Escola = Parceria Perfeita ❤
+                    </p>
+                </div>
+            </section>
+
+            <!-- ================================================== -->
+
+            <!-- Comunicados. -->
+            <section id="comunicados" class="scroll-mt-12 min-h-screen p-8 bg-gray-200">
+                <h1 class="titulo-comunicados text-3xl font-bold mb-4 opacity-0">Comunicados 📢</h1>
+                <!-- Aqui irão os comunicados serão injetados de forma dinâmica. -->
+            </section>
+
+            <!-- ================================================== -->
+
+            <!-- Postagens. -->
+            <section id="postagens" class="scroll-mt-12 min-h-screen p-8 bg-gray-200">
+                <h1 class="titulo-postagens text-3xl font-bold mb-4 opacity-0">Postagens 🤳</h1>
+                <!-- Aqui irão as postagens serão injetadas de forma dinâmica. -->
+            </section>
+
+            <!-- ================================================== -->
+
+            <!-- Equipe. -->
+            <section id="equipe" class="scroll-mt-12 min-h-screen p-8 bg-gray-200">
+                <h1 class="titulo-equipe text-3xl font-bold mb-4">Equipe 👥</h1>
+                <br>
+                <div class="equipe-carrousel opacity-0">
+                    <div class="swiper equipe-swiper mt-6">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide flex justify-center">
+                            <div class="bg-white rounded-2xl p-8 w-72 sm:w-80 md:w-[28rem] lg:w-[36rem] xl:w-[30rem] flex flex-col items-center text-center">
+                                <img src="images/index_historia_2.jpg" alt="Nome" class="w-28 h-28 rounded-full object-cover border-4 border-blue-300 shadow mb-6">
+                                <h3 class="font-semibold text-xl">Prof. 1</h3>
+                                <p class="text-base text-gray-600 mt-2">
+                                    Instituição histórica - Fundada em 1895, a Escola Padre Natal Pigatto é 
+                                    a mais antiga escola de Campo Largo e seu nome é em homenagem ao missionário italiano Natal Pigatto, 
+                                    que atuou na região entre 1895 e 1926. Ele é lembrado por sua importante contribuição à comunidade 
+                                    local e também nomeia uma importante avenida do município.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide flex justify-center">
+                            <div class="bg-white rounded-2xl p-8 w-72 sm:w-80 md:w-[28rem] lg:w-[36rem] xl:w-[30rem] flex flex-col items-center text-center">
+                                <img src="images/index_historia_2.jpg" alt="Nome" class="w-28 h-28 rounded-full object-cover border-4 border-blue-300 shadow mb-6">
+                                <h3 class="font-semibold text-xl">Prof. 2</h3>
+                                <p class="text-base text-gray-600 mt-2">
+                                    Instituição histórica - Fundada em 1895, a Escola Padre Natal Pigatto é 
+                                    a mais antiga escola de Campo Largo e seu nome é em homenagem ao missionário italiano Natal Pigatto, 
+                                    que atuou na região entre 1895 e 1926. Ele é lembrado por sua importante contribuição à comunidade 
+                                    local e também nomeia uma importante avenida do município.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination mt-4"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================== -->
+
+            <!-- Contato. -->
+            <section id="contato" class="scroll-mt-12 min-h-screen p-8 bg-gray-200">
+                <h1 class="titulo-contato text-3xl font-bold mb-4 opacity-0">Contato 📞</h1>
+                <a class="links" href="https://www.instagram.com/pigattonatal/"><strong>Instagram</strong></a>
+            </section>
+
+            <!-- ================================================== -->
+
+            <!-- História da escola. -->
+            <section id="historia" class="scroll-mt-12 min-h-screen p-8 bg-gray-200">
+                <h1 class="historia-titulo text-3xl font-bold mb-4 opacity-0">Nossa História 📖</h1>
+                <p class="historia-paragrafo opacity-0">
+                    Instituição histórica - Fundada em 1895, a Escola Padre Natal Pigatto é 
+                    a mais antiga escola de Campo Largo e seu nome é em homenagem ao missionário italiano Natal Pigatto, 
+                    que atuou na região entre 1895 e 1926. Ele é lembrado por sua importante contribuição à comunidade 
+                    local e também nomeia uma importante avenida do município.
+                </p>
+                <br>
+                <div class="historia-carrousel opacity-0">
+                    <div class="swiper historia-swiper mt-6">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/index_historia_1.jpg" class="rounded shadow-lg w-full sm:h-72 md:h-80 lg:h-96 xl:h-[40rem] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/index_historia_2.jpg" class="rounded shadow-lg w-full sm:h-72 md:h-80 lg:h-96 xl:h-[40rem] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/index_historia_3.jpg" class="rounded shadow-lg w-full sm:h-72 md:h-80 lg:h-96 xl:h-[40rem] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/index_historia_4.jpg" class="rounded shadow-lg w-full sm:h-72 md:h-80 lg:h-96 xl:h-[40rem] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/index_historia_5.jpg" class="rounded shadow-lg w-full sm:h-72 md:h-80 lg:h-96 xl:h-[40rem] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/index_historia_6.jpg" class="rounded shadow-lg w-full sm:h-72 md:h-80 lg:h-96 xl:h-[40rem] object-contain">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination mt-4"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================== -->
+
+        <!-- Fecha sessões. -->
+        </main>
+
+        <!-- ================================================== -->
+
+    <!-- Fecha o Body. -->
+    </body>
+
+    <!-- ================================================== -->
+
+    <!-- Script. -->
+    <script src="scripts/index.js"></script>
+
+    <!-- ================================================== -->
+
+<!-- Fecha o HTML. -->
 </html>
+
+<!-- ================================================== -->
