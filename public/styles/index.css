@@ -21,6 +21,15 @@ html::selection {
     color: var(--secondary);
 }
 
+.swiper-pagination-bullet {
+    background-color: rgb(255, 155, 175);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: rgb(225, 55, 90);
+}
+
 @keyframes fade-in {
     from {
         opacity: 0;

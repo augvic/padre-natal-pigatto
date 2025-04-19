@@ -1,8 +1,9 @@
 // ================================================== \\
 
 // ~~ Importa funções do Firebase.
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
 // ================================================== \\
 
@@ -21,6 +22,10 @@ const firebaseConfig = {
 
 // Inicializa funções.
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+// ~~ Exporta recursos.
+export { db, auth, collection, getDocs };
 
 // ================================================== \\
