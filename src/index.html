@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Padre Natal Pigatto</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link href="styles/index.css" rel="stylesheet">
+    </head>
+    <body class="scroll-smooth">
+        <header class="fixed top-0 w-full bg-white shadow z-50">
+            <nav class="flex flex-wrap justify-around gap-2 sm:gap-4 p-4 text-center">
+                <a href="#inicio" class="nav-bar-links text-xs sm:text-sm">
+                    <strong>Início <span class="sm:inline">📌</span></strong></a>
+                <a href="#comunicados" class="nav-bar-links text-xs sm:text-sm">
+                    <strong>Comunicados <span class="sm:inline">📢</span></strong>
+                </a>
+                <a href="#postagens" class="nav-bar-links text-xs sm:text-sm">
+                    <strong>Postagens <span class="sm:inline">🤳</span></strong>
+                </a>
+                <a href="#equipe" class="nav-bar-links text-xs sm:text-sm">
+                    <strong>Equipe <span class="sm:inline">👥</span></strong>
+                </a>
+                <a href="#historia" class="nav-bar-links text-xs sm:text-sm">
+                    <strong>História <span class="sm:inline">📖</span></strong>
+                </a>
+            </nav>
+        </header>
+        <main class="pt-14">
+            <section id="inicio" class="-mt-14 relative h-screen bg-cover bg-center" style="background-image: url('images/index_inicio.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+                <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+                    <h1 class="titulo-inicio text-white text-2xl md:text-5xl font-bold opacity-0">
+                        Escola Municipal Padre Natal Pigatto
+                    </h1>
+                    <p class="subtitulo-inicio text-white mt-4 text-lg md:text-2xl opacity-0">
+                        Família + Escola = Parceria Perfeita ❤
+                    </p>
+                </div>
+            </section>
+            <section id="comunicados" class="scroll-mt-12 min-h-screen p-8 bg-gray-200">
+                <h1 class="titulo-comunicados text-3xl font-bold opacity-0">Comunicados 📢</h1>
+                <div id="calendario" class="calendario-comunicados opacity-0 w-full max-w-[95vw] sm:max-w-5xl mx-auto mt-12 px-2 sm:px-0"></div>
+            </section>
+            <section id="postagens" class="scroll-mt-12 min-h-screen p-8 bg-gray-200">
+                <h1 class="titulo-postagens text-3xl font-bold mb-4">Postagens 🤳</h1>
+                <div class="postagens-lista opacity-0 h-[75vh] overflow-y-auto space-y-6 pr-2"></div>
+                    <div id="modalPostagem" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden">
+                        <div class="flex items-center justify-center w-full h-full p-4">
+                            <div class="bg-white rounded-2xl p-6 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative">
+                                <button onclick="document.getElementById('modalPostagem').classList.add('hidden')" class="absolute top-4 right-4 text-xl font-bold">&times;</button>
+                                <h2 id="modalPostagemTitulo" class="text-2xl font-semibold text-center mb-4"></h2>
+                                <p id="modalPostagemData" class="text-sm text-gray-500 text-center mb-6"></p>
+                                <div id="modalPostagemSwiper" class="swiper w-full mb-6">
+                                    <div class="swiper-wrapper"></div>
+                                    <div class="swiper-pagination mt-2"></div>
+                                </div>
+                                <p id="modalPostagemDescricao" class="text-gray-700 whitespace-pre-line"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="equipe" class="scroll-mt-12 min-h-screen p-8 bg-gray-200">
+                <h1 class="titulo-equipe text-3xl font-bold mb-4">Equipe 👥</h1>
+                <br>
+                <div class="equipe-carrousel opacity-0">
+                    <div class="swiper equipe-swiper mt-6">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide flex justify-center">
+                            <div class="bg-white rounded-2xl p-8 w-72 sm:w-80 md:w-[28rem] lg:w-[36rem] xl:w-[30rem] flex flex-col items-center text-center">
+                                <img src="images/profile.png" alt="Nome" class="w-28 h-28 rounded-full object-cover border-4 border-blue-300 shadow mb-6">
+                                <h3 class="font-semibold text-xl">Prof. 1</h3>
+                                <p class="text-base text-gray-600 mt-2">
+                                    Descrição
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide flex justify-center">
+                            <div class="bg-white rounded-2xl p-8 w-72 sm:w-80 md:w-[28rem] lg:w-[36rem] xl:w-[30rem] flex flex-col items-center text-center">
+                                <img src="images/profile.png" alt="Nome" class="w-28 h-28 rounded-full object-cover border-4 border-blue-300 shadow mb-6">
+                                <h3 class="font-semibold text-xl">Prof. 2</h3>
+                                <p class="text-base text-gray-600 mt-2">
+                                    Descrição
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination mt-4"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="historia" class="scroll-mt-12 min-h-screen p-8 bg-gray-200">
+                <h1 class="historia-titulo text-3xl font-bold mb-4 opacity-0">Nossa História 📖</h1>
+                <p class="historia-paragrafo opacity-0">
+                    Instituição histórica - Fundada em 1895, a Escola Padre Natal Pigatto é 
+                    a mais antiga escola de Campo Largo e seu nome é em homenagem ao missionário italiano Natal Pigatto, 
+                    que atuou na região entre 1895 e 1926. Ele é lembrado por sua importante contribuição à comunidade 
+                    local e também nomeia uma importante avenida do município.
+                </p>
+                <br>
+                <div class="historia-carrousel opacity-0">
+                    <div class="swiper historia-swiper mt-6">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/index_historia_1.jpg" class="rounded border-4 border-[rgb(155,182,255)] bg-white shadow-lg w-full sm:h-72 md:h-80 lg:h-96 xl:h-[40rem] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/index_historia_2.jpg" class="rounded border-4 border-[rgb(155,182,255)] bg-white shadow-lg w-full sm:h-72 md:h-80 lg:h-96 xl:h-[40rem] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/index_historia_3.jpg" class="rounded border-4 border-[rgb(155,182,255)] bg-white shadow-lg w-full sm:h-72 md:h-80 lg:h-96 xl:h-[40rem] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/index_historia_4.jpg" class="rounded border-4 border-[rgb(155,182,255)] bg-white shadow-lg w-full sm:h-72 md:h-80 lg:h-96 xl:h-[40rem] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/index_historia_5.jpg" class="rounded border-4 border-[rgb(155,182,255)] bg-white shadow-lg w-full sm:h-72 md:h-80 lg:h-96 xl:h-[40rem] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/index_historia_6.jpg" class="rounded border-4 border-[rgb(155,182,255)] bg-white shadow-lg w-full sm:h-72 md:h-80 lg:h-96 xl:h-[40rem] object-contain">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination mt-4"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="footer" class="bg-[rgb(55,134,225)] w-full flex items-center justify-center p-4 text-white">
+                <div id="footer_columns" class="flex flex-col md:flex-row gap-6 md:gap-10 text-sm md:text-base">
+                    <div id="coluna_contato" class="gap-2 flex flex-col">
+                        <h1 class="font-bold">Contato:</h1>
+                        <a href="https://www.instagram.com/pigattonatal/" class="flex gap-1 items-center">
+                            <img src="images/instagram_icon.png" class="w-7">
+                            <p class="hover:text-[rgb(255,100,160)]">Instagram</p>
+                        </a>
+                        <a href="https://www.facebook.com/story.php?story_fbid=1370500097631606&id=100040148869963&rdid=zO5WSEK4YddJRoDL" class="flex gap-1 items-center">
+                            <img src="images/facebook_icon.png" class="w-7">
+                            <p class="hover:text-[rgb(255,100,160)]">Facebook</p>
+                        </a>
+                        <a class="flex gap-1 items-center">
+                            <img src="images/whatsapp_icon.png" class="w-7">
+                            <p>(41) 9793-1807</p>
+                        </a>
+                    </div>
+                    <div id="endereço">
+                        <h1 class="font-bold">Endereço:</h1>
+                        <p>R. Mato Grosso, 7971 - Ferraria, Campo Largo - PR, 83608-640</p>
+                        <div id="mapa" class="flex justify-center items-center">
+                            <iframe
+                                class="mt-2 rounded-md border border-white w-full max-w-[300px] h-[200px]"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.3768196205586!2d-49.48159702473262!3d-25.473147577525683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dd15e422fd7ae7%3A0x6f2145c256da8efb!2sR.%20Mato%20Grosso%2C%207971%20-%20Ferraria%2C%20Campo%20Largo%20-%20PR%2C%2083608-640!5e0!3m2!1spt-BR!2sbr!4v1715353643826!5m2!1spt-BR!2sbr"
+                                width="500"
+                                height="200"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div id="disclaimer" class="flex flex-col gap-1">
+                        <h1 class="font-bold">Sobre o site:</h1>
+                        <p>Este site foi feito voluntariamente, não possuindo fins lucrativos, para apoio à escola.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div id="modalComunicado" class="fixed inset-0 z-50 bg-black/50 hidden">
+            <div class="flex items-center justify-center w-full h-full p-4">
+                <div class="bg-white rounded-xl max-w-4xl w-full p-6 max-h-[90vh] overflow-y-auto relative shadow-lg">
+                    <button onclick="document.getElementById('modalComunicado').classList.add('hidden')" class="absolute top-2 right-3 text-gray-500 hover:text-black text-2xl">&times;</button>
+                    <h2 id="modalTitulo" class="text-2xl font-bold mb-4"></h2>
+                    <div id="modalImagens" class="space-y-6"></div>
+                </div>
+            </div>
+        </div>
+        <div id="comunicadoModal" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden">
+            <div class="flex items-center justify-center w-full h-full p-4">
+                <div class="bg-white rounded-xl shadow-xl p-6 w-11/12 max-w-2xl relative">
+                    <button onclick="document.getElementById('comunicadoModal').classList.add('hidden')" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+                    <div id="comunicadoModalContent"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="module" src="scripts/index.js"></script>
+</html>
