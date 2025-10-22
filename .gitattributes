@@ -1,0 +1,4 @@
+* linguistic-detectable=false
+*.html linguistic-detectable=true
+*.js linguistic-detectable=true
+*css linguistic-detectable=true

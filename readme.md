@@ -6,6 +6,10 @@
 
 University project. Website created voluntarily for a kindergarten.
 
+Different sections, showing comunicates, posts and showcasing the school team.
+
+Website made voluntary.
+
 ## Tech Stack
 
 Languages:
@@ -22,9 +26,7 @@ Frameworks:
     <img width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
 </div>
 
-## Features
-
-Different sections, showing comunicates, posts and showcasing de school team.
+## Screenshots
 
 Begin:
 <div>
@@ -60,5 +62,3 @@ History:
 </div>
 
 <br>
-
-Website made voluntary.
