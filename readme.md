@@ -30,35 +30,35 @@ Frameworks:
 
 Begin:
 <div>
-    <img width="500px" src="https://github.com/augvic/padre-natal-pigatto/blob/main/src/images/showcase_0.png?raw=true" />
+    <img width="500px" src="https://cdn.jsdelivr.net/gh/augvic/augvic@latest/screenshots/padre-natal-pigatto/1.png" />
 </div>
 
 <br>
 
 Comunicates:
 <div>
-    <img width="500px" src="https://github.com/augvic/padre-natal-pigatto/blob/main/src/images/showcase_1.png?raw=true" />
+    <img width="500px" src="https://cdn.jsdelivr.net/gh/augvic/augvic@latest/screenshots/padre-natal-pigatto/2.png" />
 </div>
 
 <br>
 
 Posts:
 <div>
-    <img width="500px" src="https://github.com/augvic/padre-natal-pigatto/blob/main/src/images/showcase_2.png?raw=true" />
+    <img width="500px" src="https://cdn.jsdelivr.net/gh/augvic/augvic@latest/screenshots/padre-natal-pigatto/3.png" />
 </div>
 
 <br>
 
 Team:
 <div>
-    <img width="500px" src="https://github.com/augvic/padre-natal-pigatto/blob/main/src/images/showcase_3.png?raw=true" />
+    <img width="500px" src="https://cdn.jsdelivr.net/gh/augvic/augvic@latest/screenshots/padre-natal-pigatto/4.png" />
 </div>
 
 <br>
 
 History:
 <div>
-    <img width="500px" src="https://github.com/augvic/padre-natal-pigatto/blob/main/src/images/showcase_4.png?raw=true" />
+    <img width="500px" src="https://cdn.jsdelivr.net/gh/augvic/augvic@latest/screenshots/padre-natal-pigatto/5.png />
 </div>
 
 <br>
