@@ -58,7 +58,7 @@ Team:
 
 History:
 <div>
-    <img width="500px" src="https://cdn.jsdelivr.net/gh/augvic/augvic@latest/screenshots/padre-natal-pigatto/5.png />
+    <img width="500px" src="https://cdn.jsdelivr.net/gh/augvic/augvic@latest/screenshots/padre-natal-pigatto/5.png" />
 </div>
 
 <br>
