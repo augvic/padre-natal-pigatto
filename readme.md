@@ -15,7 +15,7 @@ The website includes:
 
 ## 🧰 Tech Stack
 
-Languages
+Languages:
 - 🌐 HTML.
 - 🎨 CSS.
 - ⚡ JavaScript.
