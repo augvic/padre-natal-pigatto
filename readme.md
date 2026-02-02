@@ -15,10 +15,10 @@ The website includes:
 
 ## 🧰 Tech Stack
 
-Languages:
+💻 Languages:
 - 🌐 HTML.
 - 🎨 CSS.
 - ⚡ JavaScript.
 
-External tools:
+⚙️ External tools:
 - 💨 Tailwind CSS.
