@@ -7,7 +7,7 @@
 🎓 University project, created voluntarily for a kindergarten school.
 
 The website includes:
-- 📢 Sections for **announcements and communications.
+- 📢 Sections for announcements and communications.
 - 📰 Posts and updates.
 - 👩‍🏫 A dedicated area to showcase the school team.
 
