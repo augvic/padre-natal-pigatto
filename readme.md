@@ -1,64 +1,24 @@
 ## 🏫 Padre Natal Pigatto
 
-🌐 School website.
+🌐 School website developed for a kindergarten.
 
-## About
+## 📖 About
 
-University project. Website created voluntarily for a kindergarten.
+🎓 University project, created voluntarily for a kindergarten school.
 
-Different sections, showing comunicates, posts and showcasing the school team.
+The website includes:
+- 📢 Sections for **announcements and communications.
+- 📰 Posts and updates.
+- 👩‍🏫 A dedicated area to showcase the school team.
 
-Website made voluntary.
+✨ Built with a focus on clarity, accessibility, and a friendly design for parents and staff.
 
-## Tech Stack
+## 🧰 Tech Stack
 
-Languages:
-<div>
-    <img width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-    <img width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-    <img width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-</div>
+Languages
+- 🌐 HTML.
+- 🎨 CSS.
+- ⚡ JavaScript.
 
-<br>
-
-Frameworks:
-<div>
-    <img width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
-</div>
-
-## Screenshots
-
-Begin:
-<div>
-    <img width="500px" src="https://cdn.jsdelivr.net/gh/augvic/augvic@latest/screenshots/padre-natal-pigatto/1.png" />
-</div>
-
-<br>
-
-Comunicates:
-<div>
-    <img width="500px" src="https://cdn.jsdelivr.net/gh/augvic/augvic@latest/screenshots/padre-natal-pigatto/2.png" />
-</div>
-
-<br>
-
-Posts:
-<div>
-    <img width="500px" src="https://cdn.jsdelivr.net/gh/augvic/augvic@latest/screenshots/padre-natal-pigatto/3.png" />
-</div>
-
-<br>
-
-Team:
-<div>
-    <img width="500px" src="https://cdn.jsdelivr.net/gh/augvic/augvic@latest/screenshots/padre-natal-pigatto/4.png" />
-</div>
-
-<br>
-
-History:
-<div>
-    <img width="500px" src="https://cdn.jsdelivr.net/gh/augvic/augvic@latest/screenshots/padre-natal-pigatto/5.png" />
-</div>
-
-<br>
+External tools:
+- 💨 Tailwind CSS.
